@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tile_0',['tile',['../classiron_1_1runtime_1_1endpoint_1_1RuntimeEndpoint.html#ac4ba26dacbeae15227be94efcc3ddc55',1,'iron::runtime::endpoint::RuntimeEndpoint']]]
+  ['ones_0',['ones',['../namespaceiron_1_1tensor.html#a7b461d9c0d7f0fd01bd64a144cf378f4',1,'iron::tensor']]]
 ];

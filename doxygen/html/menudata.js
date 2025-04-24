@@ -163,8 +163,7 @@ var menudata={children:[
 {text:"z",url:"functions_vars.html#index_z"}]},
 {text:"Typedefs",url:"functions_type.html"},
 {text:"Enumerations",url:"functions_enum.html"},
-{text:"Enumerator",url:"functions_eval.html"},
-{text:"Related Symbols",url:"functions_rela.html"}]}]},
+{text:"Enumerator",url:"functions_eval.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
@@ -221,7 +220,6 @@ var menudata={children:[
 {text:"t",url:"globals_eval.html#index_t"}]},
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"a",url:"globals_defs.html#index_a"},
-{text:"b",url:"globals_defs.html#index_b"},
 {text:"d",url:"globals_defs.html#index_d"},
 {text:"e",url:"globals_defs.html#index_e"},
 {text:"g",url:"globals_defs.html#index_g"},

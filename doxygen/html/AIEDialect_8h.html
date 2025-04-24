@@ -55,25 +55,21 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">AIEDialect.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="AIEEnums_8h_source.html">AIEEnums.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AIETargetModel_8h_source.html">aie/Dialect/AIE/IR/AIETargetModel.h</a>&quot;</code><br />
-<code>#include &quot;mlir/Dialect/Arith/IR/Arith.h&quot;</code><br />
-<code>#include &quot;mlir/Dialect/ControlFlow/IR/ControlFlow.h&quot;</code><br />
 <code>#include &quot;mlir/Dialect/Func/IR/FuncOps.h&quot;</code><br />
-<code>#include &quot;mlir/Dialect/LLVMIR/LLVMDialect.h&quot;</code><br />
 <code>#include &quot;mlir/Dialect/MemRef/IR/MemRef.h&quot;</code><br />
-<code>#include &quot;mlir/Dialect/SCF/IR/SCF.h&quot;</code><br />
 <code>#include &quot;mlir/IR/BuiltinAttributes.h&quot;</code><br />
-<code>#include &quot;mlir/IR/Dialect.h&quot;</code><br />
 <code>#include &quot;mlir/IR/OpDefinition.h&quot;</code><br />
 <code>#include &quot;mlir/IR/OpImplementation.h&quot;</code><br />
-<code>#include &quot;mlir/IR/Types.h&quot;</code><br />
 <code>#include &quot;aie/Dialect/AIE/IR/AIEInterfaces.h.inc&quot;</code><br />
 <code>#include &quot;aie/Dialect/AIE/IR/AIEDialect.h.inc&quot;</code><br />
+<code>#include &quot;aie/Dialect/AIE/IR/AIETypes.h.inc&quot;</code><br />
 <code>#include &quot;aie/Dialect/AIE/IR/AIEAttrs.h.inc&quot;</code><br />
 <code>#include &quot;aie/Dialect/AIE/IR/AIEOps.h.inc&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -83,57 +79,42 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="AIEDialect_8h__incl.png" border="0" usemap="#ainclude_2aie_2Dialect_2AIE_2IR_2AIEDialect_8h" alt=""/></div>
 <map name="ainclude_2aie_2Dialect_2AIE_2IR_2AIEDialect_8h" id="ainclude_2aie_2Dialect_2AIE_2IR_2AIEDialect_8h">
-<area shape="rect" title=" " alt="" coords="1349,5,1495,45"/>
-<area shape="rect" href="AIEEnums_8h.html" title=" " alt="" coords="157,181,255,207"/>
-<area shape="poly" title=" " alt="" coords="1349,30,1096,35,763,46,600,55,458,66,348,79,310,87,286,96,264,111,246,130,220,170,215,167,242,127,261,107,283,91,309,82,347,74,457,60,600,49,763,41,1096,30,1349,25"/>
-<area shape="rect" title=" " alt="" coords="5,262,132,287"/>
-<area shape="poly" title=" " alt="" coords="1348,31,1086,36,740,48,419,68,304,81,238,96,211,110,186,128,142,170,107,215,84,252,79,249,103,212,138,167,183,124,208,105,236,91,303,75,419,62,739,43,1086,31,1348,25"/>
-<area shape="rect" href="AIETargetModel_8h.html" title=" " alt="" coords="297,93,435,133"/>
-<area shape="poly" title=" " alt="" coords="1348,30,1188,35,967,46,711,65,449,96,448,91,711,60,966,40,1188,30,1348,25"/>
-<area shape="rect" title=" " alt="" coords="459,93,593,133"/>
-<area shape="poly" title=" " alt="" coords="1349,32,1030,50,822,69,607,96,606,91,821,63,1030,44,1348,26"/>
-<area shape="rect" title=" " alt="" coords="617,93,797,133"/>
-<area shape="poly" title=" " alt="" coords="1349,36,1114,59,811,96,810,91,1113,53,1348,30"/>
-<area shape="rect" title=" " alt="" coords="822,93,971,133"/>
-<area shape="poly" title=" " alt="" coords="1349,39,1186,63,986,96,985,90,1186,57,1348,34"/>
-<area shape="rect" title=" " alt="" coords="995,93,1145,133"/>
-<area shape="poly" title=" " alt="" coords="1349,47,1159,93,1157,88,1348,42"/>
-<area shape="rect" title=" " alt="" coords="1169,93,1326,133"/>
-<area shape="poly" title=" " alt="" coords="1385,48,1299,90,1297,85,1382,43"/>
-<area shape="rect" title=" " alt="" coords="1350,93,1494,133"/>
-<area shape="poly" title=" " alt="" coords="1425,46,1425,79,1419,79,1419,46"/>
-<area shape="rect" title=" " alt="" coords="1518,101,1705,126"/>
-<area shape="poly" title=" " alt="" coords="1465,43,1575,93,1573,98,1462,48"/>
-<area shape="rect" title=" " alt="" coords="1729,101,1891,126"/>
-<area shape="poly" title=" " alt="" coords="1496,40,1745,95,1744,100,1495,45"/>
-<area shape="rect" title=" " alt="" coords="1915,101,2118,126"/>
-<area shape="poly" title=" " alt="" coords="1496,34,1904,91,1937,96,1936,101,1903,96,1495,39"/>
-<area shape="rect" title=" " alt="" coords="2143,101,2261,126"/>
-<area shape="poly" title=" " alt="" coords="1496,27,1775,46,1953,65,2130,91,2150,95,2149,100,2130,96,1952,70,1775,51,1495,32"/>
-<area shape="rect" title=" " alt="" coords="2286,93,2433,133"/>
-<area shape="poly" title=" " alt="" coords="1496,26,1829,45,2048,63,2273,91,2272,96,2047,69,1828,50,1496,32"/>
-<area shape="rect" title=" " alt="" coords="2457,93,2592,133"/>
-<area shape="poly" title=" " alt="" coords="1496,25,1663,29,1896,39,2166,59,2444,91,2443,96,2166,64,1896,44,1663,34,1496,30"/>
-<area shape="rect" title=" " alt="" coords="2616,93,2751,133"/>
-<area shape="poly" title=" " alt="" coords="1495,24,1687,26,1959,34,2276,54,2440,70,2602,91,2602,96,2440,76,2276,60,1959,40,1686,31,1495,29"/>
-<area shape="rect" title=" " alt="" coords="2775,93,2909,133"/>
-<area shape="poly" title=" " alt="" coords="1496,26,2116,47,2483,66,2639,78,2761,91,2761,96,2638,83,2482,72,2116,52,1495,31"/>
-<area shape="rect" title=" " alt="" coords="315,262,475,287"/>
-<area shape="poly" title=" " alt="" coords="235,204,356,254,354,259,233,209"/>
-<area shape="poly" title=" " alt="" coords="187,209,102,257,99,253,184,205"/>
-<area shape="rect" title=" " alt="" coords="156,255,291,295"/>
-<area shape="poly" title=" " alt="" coords="211,206,219,241,214,242,206,207"/>
-<area shape="poly" title=" " alt="" coords="329,136,243,178,241,173,327,131"/>
-<area shape="rect" title=" " alt="" coords="555,181,715,207"/>
-<area shape="poly" title=" " alt="" coords="431,131,584,175,582,180,430,136"/>
-<area shape="rect" title=" " alt="" coords="739,181,806,207"/>
-<area shape="poly" title=" " alt="" coords="436,128,448,131,585,154,726,179,725,184,584,159,447,136,435,134"/>
-<area shape="rect" title=" " alt="" coords="279,181,359,207"/>
-<area shape="poly" title=" " alt="" coords="357,135,336,171,331,168,352,132"/>
-<area shape="rect" title=" " alt="" coords="384,181,444,207"/>
-<area shape="poly" title=" " alt="" coords="380,132,402,168,397,171,375,135"/>
-<area shape="rect" title=" " alt="" coords="468,181,531,207"/>
-<area shape="poly" title=" " alt="" coords="399,131,469,172,467,177,397,136"/>
+<area shape="rect" title=" " alt="" coords="1164,5,1311,45"/>
+<area shape="rect" href="AIEEnums_8h.html" title=" " alt="" coords="204,181,303,207"/>
+<area shape="poly" title=" " alt="" coords="1164,31,954,37,688,49,448,68,363,81,315,96,297,111,282,129,263,169,258,167,278,127,293,107,312,91,361,75,447,63,688,43,954,31,1164,25"/>
+<area shape="rect" href="AIETargetModel_8h.html" title=" " alt="" coords="325,93,464,133"/>
+<area shape="poly" title=" " alt="" coords="1164,32,868,51,676,70,478,96,477,91,675,65,868,46,1164,27"/>
+<area shape="rect" title=" " alt="" coords="488,93,637,133"/>
+<area shape="poly" title=" " alt="" coords="1164,35,939,57,651,96,651,91,938,52,1163,30"/>
+<area shape="rect" title=" " alt="" coords="661,93,819,133"/>
+<area shape="poly" title=" " alt="" coords="1164,40,833,96,832,90,1163,35"/>
+<area shape="rect" title=" " alt="" coords="843,101,1029,126"/>
+<area shape="poly" title=" " alt="" coords="1172,48,990,100,988,94,1170,43"/>
+<area shape="rect" title=" " alt="" coords="1053,101,1216,126"/>
+<area shape="poly" title=" " alt="" coords="1216,48,1161,93,1158,89,1213,44"/>
+<area shape="rect" title=" " alt="" coords="1240,101,1443,126"/>
+<area shape="poly" title=" " alt="" coords="1262,44,1318,89,1314,93,1259,48"/>
+<area shape="rect" title=" " alt="" coords="1467,93,1613,133"/>
+<area shape="poly" title=" " alt="" coords="1304,43,1461,87,1460,92,1303,48"/>
+<area shape="rect" title=" " alt="" coords="1638,93,1773,133"/>
+<area shape="poly" title=" " alt="" coords="1311,35,1452,59,1625,91,1624,96,1452,64,1310,41"/>
+<area shape="rect" title=" " alt="" coords="1797,93,1931,133"/>
+<area shape="poly" title=" " alt="" coords="1311,30,1520,52,1650,69,1784,90,1783,96,1649,75,1519,58,1311,36"/>
+<area shape="rect" title=" " alt="" coords="1955,93,2090,133"/>
+<area shape="poly" title=" " alt="" coords="1311,28,1585,47,1761,65,1942,90,1941,96,1761,71,1585,53,1311,33"/>
+<area shape="rect" title=" " alt="" coords="2114,93,2249,133"/>
+<area shape="poly" title=" " alt="" coords="1311,26,1454,31,1649,43,1872,62,2101,91,2100,96,1871,67,1649,48,1454,37,1311,31"/>
+<area shape="rect" title=" " alt="" coords="5,262,165,287"/>
+<area shape="poly" title=" " alt="" coords="230,209,123,259,121,254,228,204"/>
+<area shape="rect" title=" " alt="" coords="190,262,317,287"/>
+<area shape="poly" title=" " alt="" coords="256,207,256,248,251,248,251,207"/>
+<area shape="rect" title=" " alt="" coords="341,255,475,295"/>
+<area shape="poly" title=" " alt="" coords="277,204,360,246,357,251,275,209"/>
+<area shape="poly" title=" " alt="" coords="362,136,288,177,285,172,360,131"/>
+<area shape="rect" title=" " alt="" coords="327,181,487,207"/>
+<area shape="poly" title=" " alt="" coords="400,133,405,167,400,168,395,134"/>
+<area shape="rect" title=" " alt="" coords="511,181,591,207"/>
+<area shape="poly" title=" " alt="" coords="433,131,517,173,514,177,431,136"/>
 </map>
 </div>
 </div>
@@ -152,18 +133,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1MyOffsetSizeAndStrideOpInterface.html">xilinx::AIE::MyOffsetSizeAndStrideOpInterface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1MyOffsetSizeAndStrideOpInterface_1_1Trait.html">xilinx::AIE::MyOffsetSizeAndStrideOpInterface::Trait&lt; ConcreteOp &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxilinx_1_1AIE_1_1AIEObjectFifoType.html">xilinx::AIE::AIEObjectFifoType</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class defines the <a class="el" href="namespacexilinx_1_1AIE.html" title="Include the generated interface declarations.">AIE</a> ObjectFifo type.  <a href="classxilinx_1_1AIE_1_1AIEObjectFifoType.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxilinx_1_1AIE_1_1AIEObjectFifoSubviewType.html">xilinx::AIE::AIEObjectFifoSubviewType</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class defines the <a class="el" href="namespacexilinx_1_1AIE.html" title="Include the generated interface declarations.">AIE</a> ObjectFifoSubview type.  <a href="classxilinx_1_1AIE_1_1AIEObjectFifoSubviewType.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1Port.html">xilinx::AIE::Port</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1Connect.html">xilinx::AIE::Connect</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1DMAChannel.html">xilinx::AIE::DMAChannel</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxilinx_1_1AIE_1_1ShimDMAllocationGetter.html">xilinx::AIE::ShimDMAllocationGetter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,13 +154,13 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacexilinx_1_1AIE" id="r_namespacexilinx_1_1AIE"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html">xilinx::AIE</a></td></tr>
 <tr class="memdesc:namespacexilinx_1_1AIE"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include the generated interface declarations. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacexilinx_1_1AIE_1_1detail" id="r_namespacexilinx_1_1AIE_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE_1_1detail.html">xilinx::AIE::detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacellvm" id="r_namespacellvm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacellvm.html">llvm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a69e2a4688847620f9e0b19eb7d719156" id="r_a69e2a4688847620f9e0b19eb7d719156"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AIEDialect_8h.html#a69e2a4688847620f9e0b19eb7d719156">GET_TYPEDEF_CLASSES</a></td></tr>
+<tr class="separator:a69e2a4688847620f9e0b19eb7d719156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2491ed70a2ad4f52db3cda183c0f649c" id="r_a2491ed70a2ad4f52db3cda183c0f649c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AIEDialect_8h.html#a2491ed70a2ad4f52db3cda183c0f649c">GET_ATTRDEF_CLASSES</a></td></tr>
 <tr class="separator:a2491ed70a2ad4f52db3cda183c0f649c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad44cb6459e57e7b823431d447b831dfd" id="r_ad44cb6459e57e7b823431d447b831dfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AIEDialect_8h.html#ad44cb6459e57e7b823431d447b831dfd">GENERATE_TO_STRING</a>(TYPE_WITH_INSERTION_OP)</td></tr>
@@ -201,12 +170,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a9bbc049cccbf522ff9277a835e9d8228" id="r_a9bbc049cccbf522ff9277a835e9d8228"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structxilinx_1_1AIE_1_1Port.html">xilinx::AIE::Port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a9bbc049cccbf522ff9277a835e9d8228">xilinx::AIE::Port</a></td></tr>
-<tr class="separator:a9bbc049cccbf522ff9277a835e9d8228"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c170cb06c0d55882a544271ea54c8b" id="r_ac2c170cb06c0d55882a544271ea54c8b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structxilinx_1_1AIE_1_1Connect.html">xilinx::AIE::Connect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#ac2c170cb06c0d55882a544271ea54c8b">xilinx::AIE::Connect</a></td></tr>
-<tr class="separator:ac2c170cb06c0d55882a544271ea54c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad562ec54b6a2f40b4ac8325bbbe9ed01" id="r_ad562ec54b6a2f40b4ac8325bbbe9ed01"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structxilinx_1_1AIE_1_1DMAChannel.html">xilinx::AIE::DMAChannel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#ad562ec54b6a2f40b4ac8325bbbe9ed01">xilinx::AIE::DMAChannel</a></td></tr>
-<tr class="separator:ad562ec54b6a2f40b4ac8325bbbe9ed01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c09d85b0744aa9892c2d8a89a6df55c" id="r_a8c09d85b0744aa9892c2d8a89a6df55c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">xilinx::AIE::Port</a> = <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> { WireBundle bundle</td></tr>
+<tr class="separator:a8c09d85b0744aa9892c2d8a89a6df55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317230cd90915177026dc79a8b30df49" id="r_a317230cd90915177026dc79a8b30df49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a317230cd90915177026dc79a8b30df49">xilinx::AIE::Connect</a> = <a class="el" href="namespacexilinx_1_1AIE.html#a317230cd90915177026dc79a8b30df49">Connect</a> { <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> <a class="el" href="namespacexilinx_1_1AIE.html#a99b99b2f5e14ab0ccf4cd9c2ca6180da">src</a></td></tr>
+<tr class="separator:a317230cd90915177026dc79a8b30df49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b02ff985eaf2912556a4fbd4f4cac86" id="r_a5b02ff985eaf2912556a4fbd4f4cac86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a5b02ff985eaf2912556a4fbd4f4cac86">xilinx::AIE::DMAChannel</a> = <a class="el" href="namespacexilinx_1_1AIE.html#a5b02ff985eaf2912556a4fbd4f4cac86">DMAChannel</a> { DMAChannelDir direction</td></tr>
+<tr class="separator:a5b02ff985eaf2912556a4fbd4f4cac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -222,6 +191,20 @@ Functions</h2></td></tr>
 <tr class="separator:a4672e99d70e05544fd427f0c3541977a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf8b37a87138e2f447abf920fb36937" id="r_afbf8b37a87138e2f447abf920fb36937"><td class="memItemLeft" align="right" valign="top">WireBundle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#afbf8b37a87138e2f447abf920fb36937">xilinx::AIE::getConnectingBundle</a> (WireBundle dir)</td></tr>
 <tr class="separator:afbf8b37a87138e2f447abf920fb36937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6acd5ec29ee01c7981d4f239996c499" id="r_ab6acd5ec29ee01c7981d4f239996c499"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#ab6acd5ec29ee01c7981d4f239996c499">xilinx::AIE::operator==</a> (const <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> &amp;rhs) const</td></tr>
+<tr class="separator:ab6acd5ec29ee01c7981d4f239996c499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7795994087980c7c242f8e6497afd1c5" id="r_a7795994087980c7c242f8e6497afd1c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a7795994087980c7c242f8e6497afd1c5">xilinx::AIE::operator!=</a> (const <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> &amp;rhs) const</td></tr>
+<tr class="separator:a7795994087980c7c242f8e6497afd1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86eea06db891caf91d1d1a0537916a1" id="r_ae86eea06db891caf91d1d1a0537916a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#ae86eea06db891caf91d1d1a0537916a1">xilinx::AIE::operator&lt;</a> (const <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> &amp;rhs) const</td></tr>
+<tr class="separator:ae86eea06db891caf91d1d1a0537916a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49635da5605a26c0a484b195c32ba7c3" id="r_a49635da5605a26c0a484b195c32ba7c3"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a49635da5605a26c0a484b195c32ba7c3">xilinx::AIE::operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="namespacexilinx_1_1AIE.html#af6973de2c7d07d18ca25f11401849238">os</a>, const <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> &amp;<a class="el" href="namespacexilinx_1_1AIE.html#ab66d81c9b6c34445a229064cf527f089">port</a>)</td></tr>
+<tr class="separator:a49635da5605a26c0a484b195c32ba7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f58839053541e5fbb0a72d67ca4f52" id="r_a49f58839053541e5fbb0a72d67ca4f52"><td class="memItemLeft" align="right" valign="top">llvm::raw_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a49f58839053541e5fbb0a72d67ca4f52">xilinx::AIE::operator&lt;&lt;</a> (llvm::raw_ostream &amp;<a class="el" href="namespacexilinx_1_1AIE.html#af6973de2c7d07d18ca25f11401849238">os</a>, const <a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a> &amp;<a class="el" href="namespacexilinx_1_1AIE.html#ab66d81c9b6c34445a229064cf527f089">port</a>)</td></tr>
+<tr class="separator:a49f58839053541e5fbb0a72d67ca4f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7908fcf3f90546442e9a63f14e299da0" id="r_a7908fcf3f90546442e9a63f14e299da0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a7908fcf3f90546442e9a63f14e299da0">xilinx::AIE::operator==</a> (const <a class="el" href="namespacexilinx_1_1AIE.html#a317230cd90915177026dc79a8b30df49">Connect</a> &amp;rhs) const</td></tr>
+<tr class="separator:a7908fcf3f90546442e9a63f14e299da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfdab43931d603310309ecc34d336fd" id="r_a8bfdab43931d603310309ecc34d336fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a8bfdab43931d603310309ecc34d336fd">xilinx::AIE::operator==</a> (const <a class="el" href="namespacexilinx_1_1AIE.html#a5b02ff985eaf2912556a4fbd4f4cac86">DMAChannel</a> &amp;rhs) const</td></tr>
+<tr class="separator:a8bfdab43931d603310309ecc34d336fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d14c817daebc58ad822d608bc73313" id="r_a98d14c817daebc58ad822d608bc73313"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxilinx_1_1AIE_1_1AIETargetModel.html">AIETargetModel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a98d14c817daebc58ad822d608bc73313">xilinx::AIE::getTargetModel</a> (mlir::Operation *op)</td></tr>
 <tr class="separator:a98d14c817daebc58ad822d608bc73313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade780b382d17a6b51a4da6639c0f8716" id="r_ade780b382d17a6b51a4da6639c0f8716"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxilinx_1_1AIE_1_1AIETargetModel.html">AIETargetModel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#ade780b382d17a6b51a4da6639c0f8716">xilinx::AIE::getTargetModel</a> (AIEDevice device)</td></tr>
@@ -236,6 +219,13 @@ Functions</h2></td></tr>
 <tr class="separator:a2a25c114276b82028077c1441690ae40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a769a997456783a9c7f8bfe14531e40b3" id="r_a769a997456783a9c7f8bfe14531e40b3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a769a997456783a9c7f8bfe14531e40b3">xilinx::AIE::getBufferBaseAddress</a> (mlir::Operation *bufOp)</td></tr>
 <tr class="separator:a769a997456783a9c7f8bfe14531e40b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a13c075c9d7c2571066fd7cf9c0633472" id="r_a13c075c9d7c2571066fd7cf9c0633472"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a13c075c9d7c2571066fd7cf9c0633472">xilinx::AIE::channel</a></td></tr>
+<tr class="separator:a13c075c9d7c2571066fd7cf9c0633472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5075ab7e34c319a0cf5dbe049e6848f7" id="r_a5075ab7e34c319a0cf5dbe049e6848f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacexilinx_1_1AIE.html#a8c09d85b0744aa9892c2d8a89a6df55c">Port</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacexilinx_1_1AIE.html#a5075ab7e34c319a0cf5dbe049e6848f7">xilinx::AIE::dst</a></td></tr>
+<tr class="separator:a5075ab7e34c319a0cf5dbe049e6848f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad44cb6459e57e7b823431d447b831dfd" name="ad44cb6459e57e7b823431d447b831dfd"></a>
@@ -259,7 +249,7 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> ss.str();                                                           \</div>
 <div class="line">  }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00166">166</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00110">110</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +265,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00155">155</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00099">99</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
 
 </div>
 </div>
@@ -291,14 +281,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00270">270</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00214">214</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
+
+</div>
+</div>
+<a id="a69e2a4688847620f9e0b19eb7d719156" name="a69e2a4688847620f9e0b19eb7d719156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e2a4688847620f9e0b19eb7d719156">&#9670;&#160;</a></span>GET_TYPEDEF_CLASSES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_TYPEDEF_CLASSES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AIEDialect_8h_source.html#l00092">92</a> of file <a class="el" href="AIEDialect_8h_source.html">AIEDialect.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 29 2025 20:52:50 for MLIR-AIE by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Apr 24 2025 06:40:21 for MLIR-AIE by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
