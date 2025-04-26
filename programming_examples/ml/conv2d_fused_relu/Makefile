@@ -12,7 +12,7 @@ include ${srcdir}/../../makefile-common
 CHESS ?= false
 devicename ?= $(if $(filter 1,$(NPU2)),npu2,npu)
 
-mlirFileName = aieWithTrace_1core
+mlirFileName = aie_conv2d_relu
 
 VPATH := ${srcdir}/../../../aie_kernels/aie2
 
@@ -50,10 +50,10 @@ endif
 build/final.xclbin: build/${mlirFileName}.mlir build/conv2dk1.o  
 	mkdir -p ${@D}
 ifeq ($(CHESS), true)
-	cd ${@D} && aiecc.py -v --aie-generate-xclbin --aie-generate-npu-insts --no-compile-host \
+	cd ${@D} && aiecc.py --aie-generate-xclbin --aie-generate-npu-insts --no-compile-host \
 		 --xclbin-name=${@F} --npu-insts-name=insts.bin $(<:%=../%)
 else
-	cd ${@D} && aiecc.py -v --aie-generate-xclbin --aie-generate-npu-insts --no-compile-host \
+	cd ${@D} && aiecc.py --aie-generate-xclbin --aie-generate-npu-insts --no-compile-host \
 		--no-xchesscc --no-xbridge --xclbin-name=${@F} --npu-insts-name=insts.bin $(<:%=../%)
 endif
 
